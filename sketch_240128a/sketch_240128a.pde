@@ -22,6 +22,13 @@ void draw() {
   line(453,183,800,164);
   line(146,372,778,636);
   line(203,696,800,738);
+  strokeWeight(10);
+  line(287,618,800,668);
+  strokeWeight(5);
+  line(140,781,560,795);
+  strokeWeight(8);
+  line(413,794,800,789);
+  line(227,548,717,800);
 }
 
 void mousePressed(){
