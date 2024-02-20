@@ -1,16 +1,53 @@
+
 void setup(){
-  size(800,800);
+  size(900,900);
   background(0);
+  frameRate(.5);
   
 }
 
 void draw(){
-myPattern(0,0);
-myPattern(30,0);
-myPattern(0,60);
-myPattern(30,60);
-}
+  //pattern 1
+ for(int x = 50; x<=width-60; x+=60){
+    for(int y=50; y<=width-60; y+=60){ //the math (y+=20)happens after you do whatever is inside the for loop.
+      myPattern(x,y);
+    }
+ }
 
+
+background(0);
+//pattern2
+ for(int x = 30; x<width-30; x+=30){
+    for(int y=30; y<width-30; y+=60){ //the math (y+=20)happens after you do whatever is inside the for loop.
+      myPattern(x,y);
+    }
+ }
+ 
+//pattern3
+background(0);
+
+ for(int y = 0; y<width; y+=120){
+
+    for(int x=0; x<width; x+=60){ //the math (y+=20)happens after you do whatever is inside the for loop.
+
+      myPattern(x,y);
+
+
+
+      
+    }
+ }
+  for(int y = 60; y<width; y+=120){
+
+    for(int x=30; x<width; x+=60){ //the math (y+=20)happens after you do whatever is inside the for loop.
+      myPattern(x,y);
+
+
+
+      
+    }
+ }
+}
 
 void myPattern(int eX, int eY) {
  stroke(255);
