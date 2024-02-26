@@ -85,7 +85,7 @@ int addX = 30;
     // Continue drawing the pattern in the opposite direction
     for (x = 0; x < width; x += addX) {
       y += 10;
-      myPattern(x, y,200);
+      myPattern(x, y,300);
     }
   }
 }
@@ -104,6 +104,31 @@ int addX = 30;
   
 
 }
+if (patternNum == 6){
+  background(0);
+  //myPattern(0,0,255); //1
+  //myPattern(15,0,255);
+  //myPattern(100,0,255);//2
+  //myPattern(120,0,255);
+  //myPattern(200,0,255);//3
+  //myPattern(225,0,255);
+  //myPattern(300,0,255);//4
+  //myPattern(310,0,255);
+  //myPattern(400,0,255);//5
+  //myPattern(405,0,255);
+  //myPattern(500,0,255);//6
+  
+ for(int x = 0; x<width; x+=15){
+    for(int y= 0; y<width; y+=60){ 
+      myPattern(x,y,255);
+      if(x == x){
+        
+      }
+      x+= 15;
+      myPattern(x,y,105);
+    }
+ }
+}
 
 
  }
@@ -115,7 +140,7 @@ int addX = 30;
 
 
 void mousePressed(){
-  if (patternNum+1  ==6){
+  if (patternNum+1  ==7){
     patternNum =1;
 }else{
   patternNum +=1;
