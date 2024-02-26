@@ -11,15 +11,15 @@ function draw() {
   rect(0, 0,80,80);
 
   push(); //records the previous matrix coords
-  translate(0,100);
-  fill(91,187,209);
-  rect(0,0,80,80);
+    translate(0,100);
+    fill(91,187,209);
+    rect(0,0,80,80);
   pop();//restores to the recent previous
 
   push();
-  translate(100,0);
-  fill(232,141,103);//orange
-  rect(0,0,80,80);
+    translate(100,0);
+    fill(232,141,103);//orange
+    rect(0,0,80,80);
   pop();
   
 }
