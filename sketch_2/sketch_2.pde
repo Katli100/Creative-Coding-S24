@@ -12,7 +12,7 @@ void draw(){
   //pattern 1
   background(0);
  for(int x = 50; x<=width-60; x+=60){
-    for(int y=50; y<=width-60; y+=60){ //the math (y+=20)happens after you do whatever is inside the for loop.
+    for(int y=50; y<=width-60; y+=60){ 
       myPattern(x,y,255);
     }
  }
@@ -22,7 +22,7 @@ if (patternNum ==2){
 background(0);
 //pattern2
  for(int x = 30; x<width-30; x+=30){
-    for(int y=30; y<width-30; y+=60){ //the math (y+=20)happens after you do whatever is inside the for loop.
+    for(int y=30; y<width-30; y+=60){
       myPattern(x,y,255);
     }
  }
@@ -34,7 +34,7 @@ if (patternNum ==3){
   background(0);
  for(int y = 0; y<width; y+=120){
 
-    for(int x=0; x<width; x+=60){ //the math (y+=20)happens after you do whatever is inside the for loop.
+    for(int x=0; x<width; x+=60){ 
 
       myPattern(x,y,255);
 
@@ -45,7 +45,7 @@ if (patternNum ==3){
  }
   for(int y = 60; y<width; y+=120){
 
-    for(int x=30; x<width; x+=60){ //the math (y+=20)happens after you do whatever is inside the for loop.
+    for(int x=30; x<width; x+=60){ 
       myPattern(x,y,255);
 
 
@@ -85,7 +85,7 @@ int addX = 30;
     // Continue drawing the pattern in the opposite direction
     for (x = 0; x < width; x += addX) {
       y += 10;
-      myPattern(x, y,300);
+      myPattern(x, y,255);
     }
   }
 }
@@ -106,30 +106,36 @@ int addX = 30;
 }
 if (patternNum == 6){
   background(0);
-  //myPattern(0,0,255); //1
-  //myPattern(15,0,255);
-  //myPattern(100,0,255);//2
-  //myPattern(120,0,255);
-  //myPattern(200,0,255);//3
-  //myPattern(225,0,255);
-  //myPattern(300,0,255);//4
-  //myPattern(310,0,255);
-  //myPattern(400,0,255);//5
-  //myPattern(405,0,255);
-  //myPattern(500,0,255);//6
-  
- for(int x = 0; x<width; x+=15){
-    for(int y= 0; y<width; y+=60){ 
-      myPattern(x,y,255);
-      if(x == x){
-        
-      }
-      x+= 15;
-      myPattern(x,y,105);
-    }
- }
-}
+  boolean moveRight = true;
+ for (int x = 0; x < width; x += 15) {
+    for (int y = 0; y < height; y += 60) {
+      // Draw myPattern with color 255
+      myPattern(x, y, 255);
 
+      // Draw myPattern with color 105 below the first one
+      myPattern(x, y, 105);
+
+      if (!moveRight) {
+        // Move the second pattern (color 105) 5 pixels to the right
+        x += 10;
+      } else {
+        // Move the second pattern (color 105) 10 pixels to the left
+        x -= 10;
+      }
+
+      // Draw myPattern with color 105
+      myPattern(x, y, 255);
+
+      if (moveRight) {
+        // Move the second pattern (color 105) 10 pixels to the right
+        x += 10;
+      }
+
+      // Toggle the movement direction
+      moveRight = !moveRight;
+    }
+  }
+}
 
  }
 
