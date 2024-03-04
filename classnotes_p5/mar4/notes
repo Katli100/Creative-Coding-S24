@@ -1,0 +1,27 @@
+// let rex;
+// let somya;
+// let x;
+// let y;
+
+
+// function setup(){
+//     rex = new SnowPerson(x,y);
+//     somya = new SnowPerson(x,y);
+// }
+
+// function draw(){
+
+// }
+// class SnowPeople{
+//    contstructor(x,y){//you can have variables)
+//     this x=x;
+//     this y=y;
+
+
+// //contstructor
+
+// function display(){ //these functions are now called method
+
+// }
+//    }
+// }//class
