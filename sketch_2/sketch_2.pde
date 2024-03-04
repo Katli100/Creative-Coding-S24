@@ -1,5 +1,9 @@
 int patternNum = 1;
 color white;
+int cols, rows;
+int patternSize = 60; 
+   float eX;
+   float eY;
 void setup(){
   size(900,900);
   background(0);
@@ -136,9 +140,53 @@ if (patternNum == 6){
     }
   }
 }
+ if (patternNum == 7){
+background(0);
+    for (int x = 0; x < width; x += 60) {
+      for (int y = 0; y < height; y += 60) {
+        pushMatrix();
+        translate(mouseX, mouseY);
+        rotate(radians(frameCount * 2));
+        myPattern(x, y, color(random(255), random(255), random(255)));
+        popMatrix();
+      }
+    }
+}
 
+
+ 
+ 
+ if(patternNum == 8) {
+   background(0);
+    for (int x = 0; x < width; x += 60) {
+      for (int y = 0; y < height; y += 60) {
+        pushMatrix();
+        translate(x, y);
+        rotate(radians(mouseX % 360));
+        myPattern(0, 0, color(random(255), random(255), random(255)));
+        popMatrix();
+      }
+    }
+ }
+ 
+  if(patternNum == 9) {
+    background(0);
+    float offsetX = map(mouseX, 0, width, 0, 60);
+    float offsetY = map(mouseY, 0, height, 0, 60);
+
+    for (int x = 0; x < width; x += 60) {
+      for (int y = 0; y < height; y += 60) {
+        pushMatrix();
+        translate(x + offsetX, y + offsetY);
+        rotate(radians(frameCount * 2));
+        myPattern(0, 0, color(random(255), random(255), random(255)));
+        popMatrix();
+      }
+    }
+  }
  }
 
+ 
 
  
   
@@ -146,7 +194,7 @@ if (patternNum == 6){
 
 
 void mousePressed(){
-  if (patternNum+1  ==7){
+  if (patternNum+1  ==10){
     patternNum =1;
 }else{
   patternNum +=1;
