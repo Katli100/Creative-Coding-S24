@@ -142,16 +142,19 @@ if (patternNum == 6){
 }
  if (patternNum == 7){
 background(0);
-    for (int x = 0; x < width; x += 60) {
-      for (int y = 0; y < height; y += 60) {
+    for (int x = 0; x < width; x += 80) {
+      for (int y = 0; y < height; y += 80) {
         pushMatrix();
-        translate(mouseX, mouseY);
-        rotate(radians(frameCount * 2));
-        myPattern(x, y, color(random(255), random(255), random(255)));
+        translate(x, y);
+        if (mousePressed) {
+          float scaleFactor = map(sin(frameCount * 0.1), -1, 1, 0.5, 1.5);
+          scale(scaleFactor);
+        }
+        myPattern(0, 0, color(255, 0, 0));
         popMatrix();
       }
-    }
-}
+ }
+ }
 
 
  
